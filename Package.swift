@@ -1,32 +1,44 @@
 // swift-tools-version: 6.4
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+///
+/// Copyright 2020 Aleksander Kozin
+///
+/// Licensed under the Apache License, Version 2.0 (the "License");
+/// you may not use this file except in compliance with the License.
+/// You may obtain a copy of the License at
+///
+///     http://www.apache.org/licenses/LICENSE-2.0
+///
+/// Unless required by applicable law or agreed to in writing, software
+/// distributed under the License is distributed on an "AS IS" BASIS,
+/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+/// See the License for the specific language governing permissions and
+/// limitations under the License.
+///
+/// Created by Aleksander Kozin
+/// The Wand
 
 import PackageDescription
 
 let package = Package(
     name: "Convertable",
+    
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "Convertable",
-            targets: ["Convertable"]
-        ),
+        .library(name: "Convertable", targets: ["Convertable"]),
     ],
+    
+    dependencies: [
+        .package(url: "https://github.com/The-Wand/Any.git", exact: "1.0.3")
+    ],
+    
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Convertable",
-            swiftSettings: [
-                .enableUpcomingFeature("ApproachableConcurrency"),
-            ],
-        ),
-        .testTarget(
-            name: "ConvertableTests",
-            dependencies: ["Convertable"],
-            swiftSettings: [
-                .enableUpcomingFeature("ApproachableConcurrency"),
-            ],
-        ),
+        .target(name: "Convertable"),
+        .testTarget(name: "ConvertableTests",
+                    dependencies:
+                        [
+                            .product(name: "Any_", package: "Any"),
+                            "Convertable"
+                        ],
+                    path: "Tests"
+                   ),
     ]
 )
