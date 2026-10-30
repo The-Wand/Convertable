@@ -1,4 +1,4 @@
-// swift-tools-version: 6.4
+// swift-tools-version: 5.6
 ///
 /// Copyright 2020 Aleksander Kozin
 ///
