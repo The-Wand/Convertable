@@ -16,10 +16,11 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+///Convertable
+///Bundle
 #if canImport(Foundation)
 import Foundation
 
-/// Convert
 extension Bundle {
 
     @inline(__always)

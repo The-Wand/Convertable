@@ -16,6 +16,9 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+///Convertable
+///Numeric <-> Numeric
+
 @inline(__always)
 postfix
 public
@@ -36,6 +39,8 @@ func |<T: BinaryInteger>(value: T) -> Double {
 //func |<T: Float>(value: T) -> Double {
 //    Double
 //}
+
+
 
 
 

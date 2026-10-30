@@ -16,7 +16,8 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
-///<#Any#> to String
+///Convertable
+///<#Any#> -> String
 @inline(__always)
 postfix
 public

@@ -16,6 +16,8 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+///Convertable
+///Numeric <-> CGPoint, CGRect, etc.
 #if canImport(CoreGraphics)
 import CoreGraphics
 
